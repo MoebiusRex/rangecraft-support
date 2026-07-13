@@ -1,0 +1,53 @@
+name: Rangecraft support request
+description: Report an app, route, map, guidance, privacy, or legal-data issue.
+title: "Support: "
+labels: [support]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve Rangecraft. This issue will be public. Do not include a home address, precise ride history, phone number, password, payment details, health records, or government identification.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Route planning
+        - Map or place search
+        - Energy or battery estimate
+        - Turn preview or guidance
+        - E-bike legal information
+        - Privacy
+        - Purchase or refund guidance
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: Rangecraft version
+      placeholder: Example: 1.0 (1)
+  - type: input
+    id: device
+    attributes:
+      label: iPhone and iOS version
+      placeholder: Example: iPhone 15, iOS 18.5
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Explain what you expected and what happened instead. Use an intersection, park, trail, or public landmark rather than a private home address.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public source or evidence
+      description: For map or legal corrections, include an official public link or other non-sensitive evidence when available.
+  - type: checkboxes
+    id: privacy-check
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed private addresses, credentials, payment information, health information, and other sensitive personal data.
+          required: true
