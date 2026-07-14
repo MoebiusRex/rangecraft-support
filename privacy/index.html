@@ -96,11 +96,13 @@
         <h2>Who can receive a mapping request</h2>
         <p>
           The exact active services are shown inside Rangecraft under Profiles → Data &amp; privacy.
-          OpenFreeMap supplies the visible basemap. The official U.S. Census Geocoder may be used
-          for compatible U.S. street addresses, and the U.S. Geological Survey GNIS service may be
-          used for named U.S. places. Public App Store builds do not use the community Nominatim,
-          Photon, or Valhalla demo servers. A future release may use explicitly configured production
-          services, but this policy will be updated before that build is distributed.
+          OpenFreeMap supplies the visible basemap for open-data and demonstration routes. Apple Maps
+          supplies live cycling directions and the Apple map used to display those directions when a
+          separately approved open-data routing service is not configured. The official U.S. Census
+          Geocoder may be used for compatible U.S. street addresses, and the U.S. Geological Survey
+          GNIS service may be used for named U.S. places. Public App Store builds do not use the
+          community Nominatim, Photon, or Valhalla demo servers. A future release may use explicitly
+          configured production services, but this policy will be updated before that build is distributed.
         </p>
 
         <div class="provider-table" role="table" aria-label="Mapping provider purposes">
@@ -109,6 +111,9 @@
           </div>
           <div role="row">
             <a role="cell" href="https://openfreemap.org/privacy/">OpenFreeMap</a><span role="cell">Map style and tiles</span><span role="cell">While displaying the map</span>
+          </div>
+          <div role="row">
+            <a role="cell" href="https://www.apple.com/legal/privacy/data/en/apple-maps/">Apple Maps</a><span role="cell">Cycling directions and Apple route map</span><span role="cell">When you request or rebuild an Apple Maps route and while that route map is displayed</span>
           </div>
           <div role="row">
             <a role="cell" href="https://geocoding.geo.census.gov/geocoder/">U.S. Census</a><span role="cell">Street-address matching</span><span role="cell">When you submit a compatible U.S. address</span>
