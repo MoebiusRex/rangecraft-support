@@ -27,7 +27,7 @@
     <main class="page-shell">
       <section class="hero">
         <div>
-          <p class="eyebrow">Privacy policy · Updated July 13, 2026</p>
+          <p class="eyebrow">Privacy policy · Updated July 14, 2026</p>
           <h1>Privacy that respects the ride.</h1>
           <p class="hero-copy">
             Forthvane is designed to work without an account, advertising profile, analytics SDK,
@@ -43,9 +43,9 @@
         <div>
           <h2>The short version</h2>
           <p>
-            Rider profiles, bike profiles, and their assignments stay on your device. Place text and
-            relevant coordinates leave
-            the device only when you request an online search, route, jurisdiction lookup, or map.
+            Rider profiles, bike profiles, their assignments, and any ride history you explicitly
+            choose to record stay in the app on your device. Place text and relevant coordinates leave
+            the device only when you ask for an online search, route, jurisdiction lookup, or map.
             Forthvane does not sell personal information or use it for advertising.
           </p>
         </div>
@@ -56,12 +56,14 @@
           <span class="card-icon" aria-hidden="true">▣</span>
           <h2>Stored on your device</h2>
           <p>
-            Bike profiles, rider profiles, rider-to-bike assignments, optional age and
-            safety-equipment answers,
-            route preferences, saved-route state, and the Safety and Use Acknowledgement record are
-            stored locally. The acknowledgement record contains its revision, UTC completion time,
-            app version, build number, and locale identifier; it is not transmitted or synchronized.
-            Deleting Forthvane removes this app-owned local data.
+            Bike specifications, rider preferences, optional age and safety-equipment answers,
+            route preferences, the Safety and Use Acknowledgement record, and up to the 100 most recent
+            opted-in ride records are stored locally. A ride can include start/end times, named endpoints,
+            profile references, modeled battery and climb values, and a compacted GPS track with coordinates,
+            timestamps, elevation, and accuracy. Forthvane has no app-sync service. The ride-history
+            directory is excluded from device backup; other preferences may be included in an Apple-managed
+            encrypted device backup under your iCloud or computer-backup settings. Deleting Forthvane removes
+            this app-owned local data.
           </p>
         </article>
         <article class="card">
@@ -71,6 +73,7 @@
             A place search may contain the address or place text you enter. Route and jurisdiction
             requests contain the start, destination, or current coordinates needed to calculate the
             result. Normal network information, including an IP address, may reach the provider.
+            The app uses a no-cookie network session without a disk response cache for these requests.
           </p>
         </article>
         <article class="card">
@@ -86,9 +89,9 @@
           <span class="card-icon" aria-hidden="true">☷</span>
           <h2>Your choices</h2>
           <p>
-            You can deny location permission, enter places manually, use the included demonstration
-            route without requesting a new route, change permission in iPhone Settings, or delete the
-            app and its local profile data.
+            You can deny location permission, keep GPS recording off, enter places manually, use the
+            demonstration route without a new route request, delete individual rides, clear all ride
+            history, change permission in iPhone Settings, or delete the app and its local data.
           </p>
         </article>
       </div>
@@ -98,13 +101,11 @@
         <h2>Who can receive a mapping request</h2>
         <p>
           The exact active services are shown inside Forthvane under Profiles → Data &amp; privacy.
-          OpenFreeMap supplies the visible basemap for open-data and demonstration routes. Apple Maps
-          supplies live cycling directions and the Apple map used to display those directions when a
-          separately approved open-data routing service is not configured. The official U.S. Census
-          Geocoder may be used for compatible U.S. street addresses, and the U.S. Geological Survey
-          GNIS service may be used for named U.S. places. Public App Store builds do not use the
-          community Nominatim, Photon, or Valhalla demo servers. A future release may use explicitly
-          configured production services, but this policy will be updated before that build is distributed.
+          App Store builds use the official U.S. Census Geocoder for compatible street addresses,
+          the U.S. Geological Survey GNIS service for named U.S. places, and Apple Maps for cycling
+          directions and the Release basemap. Community demo search, map, and routing endpoints remain
+          disabled unless replaced with approved production services. Development builds can use the
+          public Photon, Nominatim, Valhalla, and OpenFreeMap services under their applicable policies.
         </p>
 
         <div class="provider-table" role="table" aria-label="Mapping provider purposes">
@@ -112,10 +113,10 @@
             <span role="columnheader">Service</span><span role="columnheader">Purpose</span><span role="columnheader">When contacted</span>
           </div>
           <div role="row">
-            <a role="cell" href="https://openfreemap.org/privacy/">OpenFreeMap</a><span role="cell">Map style and tiles</span><span role="cell">While displaying the map</span>
+            <a role="cell" href="https://www.apple.com/legal/privacy/data/en/apple-maps/">Apple Maps</a><span role="cell">Release cycling directions and basemap</span><span role="cell">When you request or display a live Release route</span>
           </div>
           <div role="row">
-            <a role="cell" href="https://www.apple.com/legal/privacy/data/en/apple-maps/">Apple Maps</a><span role="cell">Cycling directions and Apple route map</span><span role="cell">When you request or rebuild an Apple Maps route and while that route map is displayed</span>
+            <a role="cell" href="https://openfreemap.org/privacy/">OpenFreeMap</a><span role="cell">Development or approved managed map style and tiles</span><span role="cell">Not contacted by the current public Release configuration</span>
           </div>
           <div role="row">
             <a role="cell" href="https://geocoding.geo.census.gov/geocoder/">U.S. Census</a><span role="cell">Street-address matching</span><span role="cell">When you submit a compatible U.S. address</span>
@@ -141,7 +142,18 @@
           Location access is optional and limited to while you use the app. Foreground guidance compares
           your position with the selected route on the device. A current coordinate is sent for routing
           only when you explicitly ask to rebuild from your current location. Forthvane does not
-          currently provide background navigation.
+          currently provide background navigation. Saving a ride is off by default and starts only after
+          you turn on “Save GPS ride to history” for that ride; the dashboard shows a REC indicator while
+          points are stored. Ending the ride saves meaningful progress locally.
+        </p>
+        <h2>Sharing and export files</h2>
+        <p>
+          Text summaries and precise GPX files are separate, user-initiated choices in the iOS share
+          sheet. Text can contain named endpoints. GPX can contain exact GPS or non-Apple route coordinates,
+          timestamps, and elevation and may reveal a home, school, workplace, or routine. Apple Maps
+          planned-route geometry is not stored or exported. GPX exports use a protected, unique temporary
+          file excluded from backup; files older than one day are removed before a later export and iOS may
+          remove them sooner. Forthvane does not receive a copy of anything you share.
         </p>
         <h2>Children and optional age information</h2>
         <p>
